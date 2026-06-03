@@ -31,10 +31,6 @@ class AmplitudeFidelityModel(PytorchQuantumModel):
                 # Contract tensor network
                 result = self._tn_contract(nodes, edges).tensor
 
-                # IMPORTANT:
-                # result is already a density matrix
-                # do NOT flatten
-                # do NOT normalize
                 results.append(result)
 
             return torch.stack(results)
